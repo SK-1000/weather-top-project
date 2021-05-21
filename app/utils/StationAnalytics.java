@@ -302,9 +302,9 @@ public class StationAnalytics {
     station.latestTemperature = StationAnalytics.getLatestTemp(station.readings);
 
     try {
-      station.latestTemperatureFahrenheit = StationAnalytics.getLatestTempFahrenheit(station.readings);
+      station.latesttemperaturefahrenheit = StationAnalytics.getLatestTempFahrenheit(station.readings);
     } catch (NullPointerException e) {
-      station.latestTemperatureFahrenheit = 0.0;
+      station.latesttemperaturefahrenheit = 0.0;
     }
 
     station.beaufort = StationAnalytics.getLatestWind(station.readings);
