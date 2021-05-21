@@ -3,40 +3,20 @@
 
 #{menu id:"personaldetails"/}
 
-
 <div class="ui placeholder segment">
-    <div class="ui two column very relaxed stackable grid">
+    <div class="ui one column very relaxed stackable grid">
         <div class="column">
-            <form class="ui form">
-                <div class="field">
-                    <label>New email address</label>
-                    <input type="text" name="first-name" placeholder="login email address">
-                </div>
-
-                <button class="ui button" type="submit">Submit</button>
+            <form class="ui form" action="/personaldetails/updateDetails" method="POST">
+                    <div class="field">
+                        <label>Enter New Email address</label>
+                        <input type="text" name="email" placeholder="New email address">
+                    </div>
+                    <div class="field">
+                        <label>Enter New Password</label>
+                        <input type="password" name="password" placeholder="New Password">
+                    </div>
+                    <div class="ui submit button">Submit New User Details</div>
             </form>
         </div>
-        <div class="middle aligned column">
-            <div class="ui form info">
-                <div class="field">
-                    <label>Current Password</label>
-                    <input type="password" placeholder="Current Password">
-                </div>
-                <div class="field">
-                    <label>New Password</label>
-                    <input type="password" placeholder="New Password">
-                </div>
-                <div class="ui info message">
-                    <div class="header">Requirements</div>
-                    <ul class="list">
-                        <li>Password must contain at least 5 characters</li>
-                    </ul>
-                </div>
-                <div class="ui submit button">Submit</div>
-            </div>
-        </div>
-    </div>
-    <div class="ui vertical divider">
-        And / Or
     </div>
 </div>

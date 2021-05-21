@@ -17,6 +17,7 @@ POST    /dashboard/addstation                       Dashboard.addStation
 GET     /dashboard/deletestation/{id}               Dashboard.deleteStation
 GET     /about                                      About.index
 GET     /personaldetails                            PersonalDetails.index
+POST    /personaldetails/updateDetails              PersonalDetails.updateDetails
 GET     /station/{id}                               StationCtrl.index
 GET     /stations/{id}/deletereading/{readingid}    StationCtrl.deleteReading
 POST    /stations/{id}/addReading                   StationCtrl.addReading
