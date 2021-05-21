@@ -28,13 +28,13 @@ public class StationAnalytics {
   public static double getLatestTempFahrenheit(List<Reading> readings) {
     Reading latestReading = null;
     double latestTemp = 0.;
-    double latestTemperatureFahrenheit = 0.0;
+    double latestTempFahrenheit = 0.0;
     if (readings.size() > 0) {
       latestReading = readings.get(readings.size() - 1);
       latestTemp = latestReading.temp;
-      latestTemperatureFahrenheit = (latestTemp*9/5+32);
+      latestTempFahrenheit = (latestTemp*9/5+32);
     }
-    return latestTemperatureFahrenheit;
+    return latestTempFahrenheit;
   }
 
 
@@ -300,7 +300,13 @@ public class StationAnalytics {
 
     station.latestWeatherCodeStr = StationAnalytics.getWeatherCode(station.readings);
     station.latestTemperature = StationAnalytics.getLatestTemp(station.readings);
-    station.latestTemperatureFahrenheit = StationAnalytics.getLatestTempFahrenheit(station.readings);
+
+    try {
+      station.latestTemperatureFahrenheit = StationAnalytics.getLatestTempFahrenheit(station.readings);
+    } catch (NullPointerException e) {
+      station.latestTemperatureFahrenheit = 0.0;
+    }
+
     station.beaufort = StationAnalytics.getLatestWind(station.readings);
     station.convertToTextDir = StationAnalytics.getWindDirection(station.readings);
     station.latestWindChill = StationAnalytics.getWindChill(station.readings);
