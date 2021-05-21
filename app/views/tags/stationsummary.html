@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stationsummary</title>
+</head>
+<body>
+<section>
+
+    <div class="ui five stackable cards">
+        <div class="primary card">
+            <div class="image">
+                <img src="/public/images/pexels-pixabay-269790.jpg">
+            </div>
+            <div class = "center aligned icon">
+                <i class="huge blue map marker icon"></i>
+            </div>
+            <div class="content">
+                <a class="header">${_station.name}</a>
+                <div class="description">
+                    <p> Latitude ${_station.latitude} </p>
+                    <p> Longitude ${_station.longitude} </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="primary card">
+            <div class="image">
+                <img src="/public/images/pexels-megan-newman-837494.jpg">
+            </div>
+            <div class = "center aligned icon">
+                #{if _station.latestWeatherCodeStr == "clear" }
+                <i class="huge pink sun icon"></i>
+                #{/if}
+                #{if _station.latestWeatherCodeStr == "rain" }
+                <i class="huge pink umbrella icon"></i>
+                #{/if}
+                #{if _station.latestWeatherCodeStr == "partial clouds" }
+                <i class="huge pink cloud sun icon"></i>
+                #{/if}
+                #{if _station.latestWeatherCodeStr == "cloudy" }
+                <i class="huge pink cloud icon"></i>
+                #{/if}
+                #{if _station.latestWeatherCodeStr == "light showers" }
+                <i class="huge pink cloud rain icon"></i>
+                #{/if}
+                #{if _station.latestWeatherCodeStr == "heavy showers" }
+                <i class="huge pink cloud showers heavy icon"></i>
+                #{/if}
+                #{if _station.latestWeatherCodeStr == "snow" }
+                <i class="huge pink snowflake icon"></i>
+                #{/if}
+                #{if _station.latestWeatherCodeStr == "thunder" }
+                <i class="huge pink bolt icon"></i>
+                #{/if}
+                #{if _station.latestWeatherCodeStr == "Invalid code" }
+                <i class="massive red exclamation circle icon"></i>
+                #{/if}
+            </div>
+            <div class="content">
+                <a class="header">Weather</a>
+                <div class="description">
+                    <p> latest Weather: ${_station.latestWeatherCodeStr}  </p>
+                </div>
+            </div>
+        </div>
+        <div class="primary card">
+            <div class="image">
+                <img src="/public/images/pexels-eberhard-grossgasteiger-844297.jpg">
+            </div>
+            <div class = "center aligned icon">
+                <i class="huge blue thermometer icon"></i>
+            </div>
+            <div class="content">
+                <a class="header">Temperature</a>
+                <div class="description">
+                    <p>latest temp: ${_station.latestTemperature} C</p>
+                    <p>latest temp: ${_station.latestTemperature*9/5+32}</p>
+                    <p>Minimum temp: ${_station.minTempReading} C</p>
+                    <p>Maximum temp: ${_station.maxTempReading} C</p>
+                </div>
+                <div class = "center aligned icon">
+                    <div>
+                        #{if _station.tempTrend == "rising" }
+                        <i class="big blue arrow alternate circle up icon"></i>
+                        #{/if}
+                        #{if _station.tempTrend == "steady" }
+                        <i class="big blue arrows alternate horizontal icon"></i>
+                        #{/if}
+                        #{if _station.tempTrend == "falling" }
+                        <i class="big blue arrow alternate circle down icon"></i>
+                        #{/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="primary card">
+            <div class="image">
+                <img src="/public/images/wind.jpg">
+            </div>
+            <div class = "center aligned icon">
+                <i class="huge blue wind icon"></i>
+            </div>
+            <div class="content">
+                <a class="header">Wind Speed</a>
+                <div class="description">
+                    <p> latest WindSpeed ${_station.beaufort}</p>
+                    <p>${_station.convertToTextDir}</p>
+                    <p>Feels Like</p>
+                    <p>${_station.latestWindChill} C</p>
+                    <p>Min Wind Speed: ${_station.minWindReading} C</p>
+                    <p>Max Wind Speed: ${_station.maxWindReading} C</p>
+                </div>
+                <div class = "center aligned icon">
+                    <div>
+                        #{if _station.windTrend == "rising" }
+                        <i class="big blue arrow alternate circle up icon"></i>
+                        #{/if}
+                        #{if _station.windTrend == "steady" }
+                        <i class="big blue arrows alternate horizontal icon"></i>
+                        #{/if}
+                        #{if _station.windTrend == "falling" }
+                        <i class="big blue arrow alternate circle down icon"></i>
+                        #{/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="primary card">
+            <div class="image">
+                <img src="/public/images/pexels-andre-furtado-1162251.jpg">
+            </div>
+            <div class = "center aligned icon">
+                <i class="huge blue atom icon"></i>
+            </div>
+            <div class="content">
+                <a class="header">Pressure</a>
+                <div class="description">
+                    <p>latest Pressure: ${_station.latestPressure} hpa</p>
+                    <p>Min Pressure: ${_station.minPressureReading} C</p>
+                    <p>Max Pressure: ${_station.maxPressureReading} C</p>
+                </div>
+                <div class = "center aligned icon">
+                    <div>
+                        #{if _station.pressureTrend == "rising" }
+                        <i class="big blue arrow alternate circle up icon"></i>
+                        #{/if}
+                        #{if _station.pressureTrend == "steady" }
+                        <i class="big blue arrows alternate horizontal icon"></i>
+                        #{/if}
+                        #{if _station.pressureTrend == "falling" }
+                        <i class="big blue arrow alternate circle down icon"></i>
+                        #{/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--<div class="ui five column grid">
+        <div class="column">
+            <div class="ui card">
+                <div class="image">
+                    <img src="/public/images/weathervane.png">
+                </div>
+                <div class="content">
+                    <a class="header">${_station.name}</a>
+                    <div class="description">
+                        <p> Latitude ${_station.latitude} </p>
+                        <p> Longitude ${_station.longitude} </p>
+                    </div>
+                        <div class = "center aligned icon">
+                            <i class="huge blue map marker icon"></i>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui card">
+                <div class="image">
+                    <img src="/public/images/pexels-megan-newman-837494.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">Weather</a>
+                    <div class="description">
+                        <p>latest Weather: ${_station.latestWeatherCodeStr} </p>
+                    </div>
+                    <div>
+                        <div class = "center aligned icon">
+                            #{if _station.latestWeatherCodeStr == "clear" }
+                            <i class="massive pink sun icon"></i>
+                            #{/if}
+                            #{if _station.latestWeatherCodeStr == "rain" }
+                            <i class="massive pink umbrella icon"></i>
+                            #{/if}
+                            #{if _station.latestWeatherCodeStr == "partial clouds" }
+                            <i class="massive pink cloud sun icon"></i>
+                            #{/if}
+                            #{if _station.latestWeatherCodeStr == "cloudy" }
+                            <i class="massive pink cloud icon"></i>
+                            #{/if}
+                            #{if _station.latestWeatherCodeStr == "light showers" }
+                            <i class="massive pink cloud rain icon"></i>
+                            #{/if}
+                            #{if _station.latestWeatherCodeStr == "heavy showers" }
+                            <i class="massive pink cloud showers heavy icon"></i>
+                            #{/if}
+                            #{if _station.latestWeatherCodeStr == "snow" }
+                            <i class="massive pink snowflake icon"></i>
+                            #{/if}
+                            #{if _station.latestWeatherCodeStr == "thunder" }
+                            <i class="massive pink bolt icon"></i>
+                            #{/if}
+                            #{if _station.latestWeatherCodeStr == "Invalid code" }
+                            <i class="massive red exclamation circle icon"></i>
+                            #{/if}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui card">
+                <div class="image">
+                    <img src="/public/images/pexels-eberhard-grossgasteiger-844297.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">Temperature</a>
+                    <div class="description">
+                        <p>latest temp: ${_station.latestTemperature} C</p>
+                        <p>latest temp: ${_station.latestTemperature*9/5+32}</p>
+                        <p>Minimum temp: ${_station.minTempReading} C</p>
+                        <p>Maximum temp: ${_station.maxTempReading} C</p>
+                    </div>
+                    <div>
+                        #{if _station.tempTrend == "rising" }
+                        <i class="arrow alternate circle up icon"></i>
+                        #{/if}
+                        #{if _station.tempTrend == "steady" }
+                        <i class="arrows alternate horizontal icon"></i>
+                        #{/if}
+                        #{if _station.tempTrend == "falling" }
+                        <i class="arrow alternate circle down icon"></i>
+                        #{/if}
+                     </div>
+                    <div class = "center aligned icon">
+                        <i class="huge blue thermometer icon"></i>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui card">
+                <div class="image">
+                    <img src="/public/images/wind.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">Wind Speed</a>
+                    <div class="description">
+                        <p> latest WindSpeed ${_station.beaufort}</p>
+                        <p>${_station.convertToTextDir}</p>
+                        <p>Feels Like</p>
+                        <p>${_station.latestWindChill} C</p>
+                        <p>Min Wind Speed: ${_station.minWindReading} C</p>
+                        <p>Max Wind Speed: ${_station.maxWindReading} C</p>
+                    </div>
+                    <div class = "center aligned icon">
+                        <i class="huge blue wind icon"></i>
+                    </div>
+                    <div>
+                        #{if _station.windTrend == "rising" }
+                        <i class="arrow alternate circle up icon"></i>
+                        #{/if}
+                        #{if _station.windTrend == "steady" }
+                        <i class="arrows alternate horizontal icon"></i>
+                        #{/if}
+                        #{if _station.windTrend == "falling" }
+                        <i class="arrow alternate circle down icon"></i>
+                        #{/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class= "ui card">
+                <div class="image">
+                    <img src="/public/images/pexels-andre-furtado-1162251.jpg">
+                </div>
+                <div class="content">
+                    <a class="header">Pressure</a>
+                    <div class="description">
+                        <p>latest Pressure: ${_station.latestPressure} hpa</p>
+                        <p>Min Pressure: ${_station.minPressureReading} C</p>
+                        <p>Max Pressure: ${_station.maxPressureReading} C</p>
+
+                <div class = "center aligned icon">
+                    <i class="huge blue atom icon"></i>
+                </div>
+                        <div>
+                            #{if _station.pressureTrend == "rising" }
+                            <i class="arrow alternate circle up icon"></i>
+                            #{/if}
+                            #{if _station.pressureTrend == "steady" }
+                            <i class="arrows alternate horizontal icon"></i>
+                            #{/if}
+                            #{if _station.pressureTrend == "falling" }
+                            <i class="arrow alternate circle down icon"></i>
+                            #{/if}
+                            </div>
+                    </div>
+                </div>-->
+</section>
+</body>
+</html>

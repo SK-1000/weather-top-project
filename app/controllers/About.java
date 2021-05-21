@@ -2,13 +2,21 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
+
 import java.util.*;
+
 import models.*;
 
-public class About extends Controller
-{
+/**
+ * The about Java class renders a view page with outlines the premise of the WeatherTop App
+ *
+ * @author Sheila Kirwan
+ *
+ */
+
+public class About extends Controller {
   public static void index() {
-    Logger.info("Rendering about");
-    render ("about.html");
+    Logger.info("Rendering about"); //Includes logging message in the console
+    render("about.html"); // displays the about view
   }
 }
