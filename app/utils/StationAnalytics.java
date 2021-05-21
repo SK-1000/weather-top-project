@@ -28,13 +28,13 @@ public class StationAnalytics {
   public static double getLatestTempFahrenheit(List<Reading> readings) {
     Reading latestReading = null;
     double latestTemp = 0.;
-    double latestTempFahrenheit = 0.0;
+    double latestTemperatureFahrenheit = 0.0;
     if (readings.size() > 0) {
       latestReading = readings.get(readings.size() - 1);
       latestTemp = latestReading.temp;
-      latestTempFahrenheit = (latestTemp*9/5+32);
+      latestTemperatureFahrenheit = (latestTemp*9/5+32);
     }
-    return latestTempFahrenheit;
+    return latestTemperatureFahrenheit;
   }
 
 
