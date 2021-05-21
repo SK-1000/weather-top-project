@@ -26,6 +26,7 @@ public class Station extends Model {
   public List<Reading> readings = new ArrayList<Reading>();
 
   public double latestTemperature;
+  public double latestTemperatureFahrenheit;
   public double latestPressure;
   public String latestWeatherCodeStr;
   public String beaufort;
