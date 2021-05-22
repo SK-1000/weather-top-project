@@ -25,6 +25,8 @@ public class StationAnalytics {
     return latestTemp;
   }
 
+
+
   public static double getLatestTempFahrenheit(List<Reading> readings) {
     Reading latestReading = null;
     double latestTemp = 0.;
