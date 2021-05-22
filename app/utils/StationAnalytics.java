@@ -165,29 +165,29 @@ public class StationAnalytics {
       latestReading = readings.get(readings.size() - 1);
 
       if (latestReading.windSpeed <= 1) {
-        beaufort = "0 hpa";
+        beaufort = "0 bft";
       } else if (latestReading.windSpeed > 1 && latestReading.windSpeed <= 5) {
-        beaufort = "1 hpa";
+        beaufort = "1 bft";
       } else if (latestReading.windSpeed >= 6 && latestReading.windSpeed <= 11) {
-        beaufort = "2 hpa";
+        beaufort = "2 bft";
       } else if (latestReading.windSpeed > 12 && latestReading.windSpeed <= 19) {
-        beaufort = "3 hpa";
+        beaufort = "3 bft";
       } else if (latestReading.windSpeed > 20 && latestReading.windSpeed <= 28) {
-        beaufort = "4 hpa";
+        beaufort = "4 bft";
       } else if (latestReading.windSpeed > 29 && latestReading.windSpeed <= 38) {
-        beaufort = "5 hpa";
+        beaufort = "5 bft";
       } else if (latestReading.windSpeed > 39 && latestReading.windSpeed <= 49) {
-        beaufort = "6 hpa";
+        beaufort = "6 bft";
       } else if (latestReading.windSpeed > 50 && latestReading.windSpeed <= 61) {
-        beaufort = "7 hpa";
+        beaufort = "7 bft";
       } else if (latestReading.windSpeed >= 62 && latestReading.windSpeed <= 74) {
-        beaufort = "8 hpa";
+        beaufort = "8 bft";
       } else if (latestReading.windSpeed > 75 && latestReading.windSpeed <= 88) {
-        beaufort = "9 hpa";
+        beaufort = "9 bft";
       } else if (latestReading.windSpeed > 89 && latestReading.windSpeed <= 102) {
-        beaufort = "10 hpa";
+        beaufort = "10 bft";
       } else if (latestReading.windSpeed > 103 && latestReading.windSpeed <= 117) {
-        beaufort = "11 hpa";
+        beaufort = "11 bft";
       }
     }
     return beaufort;

@@ -10,7 +10,7 @@ import utils.StationAnalytics;
 
 
 /**
- * The StationCntl class renders a stations.html page which contains a list of readings, station summary details.
+ * The StationCtrl class renders a stations.html page which contains a list of readings, station summary details.
  *  This class also includes add reading method and delete readings methods.
  * @author Sheila Kirwan
  */
@@ -28,7 +28,7 @@ public class StationCtrl extends Controller {
 
   /**
    * Method to allow the web application to remove a reading from a Station, when the remove reading is button is clicked on the
-   * ListReadings View.This will actually remove the reading and delete it from the Station and the database.
+   * ListReadings View.This will remove the reading and delete it from the Station and the database.
    */
 
   public static void deletereading(Long id, Long readingid) {

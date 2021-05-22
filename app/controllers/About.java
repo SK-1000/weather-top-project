@@ -8,7 +8,7 @@ import java.util.*;
 import models.*;
 
 /**
- * The about Java class renders a view page with outlines the premise of the WeatherTop App
+ * The about Java class renders a view page which outlines the premise of the WeatherTop App
  *
  * @author Sheila Kirwan
  *

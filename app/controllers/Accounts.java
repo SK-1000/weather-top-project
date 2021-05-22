@@ -6,7 +6,11 @@ import play.mvc.Controller;
 
 
 /**
- * This class is returning the views sign up and log in
+ * This class is returning the views sign up and log in and contains the code to:
+ * Register a new user
+ * Authenticate an existing user
+ * logout
+ * find which member is logged in
  *
  *@author Sheila Kirwan
  */

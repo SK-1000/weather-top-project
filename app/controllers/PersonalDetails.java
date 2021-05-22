@@ -8,7 +8,7 @@ import play.mvc.*;
 
 
 /**
- * The about Java class renders a view page with outlines options to edit customer details
+ * The Personal Details Java class renders a view page which outlines options to edit customer details. Unfortunately I didn't manage to get this working.
  *
  * @author Sheila Kirwan
  *

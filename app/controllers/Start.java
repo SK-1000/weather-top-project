@@ -4,7 +4,7 @@ import play.Logger;
 import play.mvc.Controller;
 
 /**
- * The start class renders a start page which has some pictures and a welcome and brief explanation of the app.
+ * The start class renders a start page which has some pictures and a welcome to the App.
  *
  * @author Sheila Kirwan
  *

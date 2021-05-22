@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * The Code class which creates the parameters relating to the Weather readings
+ * The Reading class outlines the parameters relating to the Weather
  *
  * @author Sheila Kirwan
  */
