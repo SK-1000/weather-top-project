@@ -35,7 +35,7 @@ public class Reading extends Model {
     this.timestamp = now.toString();
   }
 
-  public String getTimestamp() {
+ /* public String getTimestamp() {
     return timestamp;
   }
 
@@ -49,5 +49,5 @@ public class Reading extends Model {
     timestamp = formatter.format(date);
     return timestamp;
   }
-
+*/
 }

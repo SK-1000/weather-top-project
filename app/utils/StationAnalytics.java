@@ -34,7 +34,7 @@ public class StationAnalytics {
     if (readings.size() > 0) {
       latestReading = readings.get(readings.size() - 1);
       latestTemp = latestReading.temp;
-      latestTempFahrenheit = (latestTemp*9/5+32);
+      latestTempFahrenheit = Math.round(latestTemp*9/5+32);
     }
     return latestTempFahrenheit;
   }
